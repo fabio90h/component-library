@@ -15,9 +15,10 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": ["error"],
+    "prettier/prettier": ["warn"],
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
+    "react/require-default-props": "off",
     "import/extensions": ["error", "never"],
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
