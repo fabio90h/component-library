@@ -1,5 +1,8 @@
-import styled from 'styled-components';
-import { CssStyleable } from '../../utils/StyledComponents';
+import styled, { css } from 'styled-components';
+import {
+  CssStyleable,
+  mediaQueryCss,
+} from '../../utils/StyledComponents';
 
 const Button = styled.button<CssStyleable>`
   background-color: #ffffff;
@@ -43,6 +46,13 @@ const Button = styled.button<CssStyleable>`
     cursor: not-allowed;
     opacity: 1;
   }
+
+  ${mediaQueryCss(
+    'isMobile',
+    css`
+      background-color: red;
+    `,
+  )}
 
   ${(props) => props.cssStyles}
 `;
