@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
-import {
-  CssStyleable,
-  mediaQueryCss,
-} from '../../utils/StyledComponents';
+
+import { mediaQueryCss } from '../../utils/MediaQuery';
+import { CssStyleable } from '../../utils/StyledComponents';
 
 const Button = styled.button<CssStyleable>`
   background-color: #ffffff;
@@ -47,6 +46,7 @@ const Button = styled.button<CssStyleable>`
     opacity: 1;
   }
 
+  /* Just to test that the media query is working properly */
   ${mediaQueryCss(
     'isMobile',
     css`
