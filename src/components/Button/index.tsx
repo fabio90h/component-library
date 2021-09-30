@@ -1,9 +1,16 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { mediaQueryCss } from '../../utils/MediaQuery';
 import { CssStyleable } from '../../utils/StyledComponents';
+import { JumpingDots } from '../Animations/JumpingDots';
 
-const Button = styled.button<CssStyleable>`
+type Props = React.ComponentPropsWithoutRef<'button'> &
+  CssStyleable & {
+    loading?: boolean;
+  };
+
+const BaseButton = styled.button<CssStyleable>`
   background-color: #ffffff;
   border: 1px solid #222222;
   border-radius: 8px;
@@ -56,5 +63,31 @@ const Button = styled.button<CssStyleable>`
 
   ${(props) => props.cssStyles}
 `;
+
+const TextDisplay = styled.span<{ isVisible: boolean }>`
+  visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
+`;
+
+const Button = React.forwardRef<HTMLButtonElement, Props>(
+  (props, ref) => {
+    const { loading = false, children, ...rest } = props;
+    return (
+      <BaseButton ref={ref} {...rest}>
+        {loading && (
+          <JumpingDots
+            cssStyles={css`
+              position: absolute;
+              left: calc(
+                50% - 20px
+              ); //20px is half of the size of the combined dots
+              bottom: calc(50% - 4px);
+            `}
+          />
+        )}
+        <TextDisplay isVisible={!loading}>{children}</TextDisplay>
+      </BaseButton>
+    );
+  },
+);
 
 export default Button;

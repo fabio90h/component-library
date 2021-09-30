@@ -1,6 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { CssStyleable } from '../../../utils/StyledComponents';
 
+type Props = CssStyleable;
+
+// Animations
 const jumping = keyframes`
     0% {
       transform: translate(0, 0);
@@ -14,13 +18,13 @@ const jumping = keyframes`
     
   `;
 
+// Element
 const Dot = styled.div`
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 8px;
+  height: 8px;
   border-radius: 15px;
   background-color: #4b9cdb;
-  margin: 4px;
 
   &:nth-last-child(1) {
     margin-left: 4px;
@@ -39,10 +43,12 @@ const Dot = styled.div`
   }
 `;
 
-const DotContainer = styled.div``;
+const DotContainer = styled.div<CssStyleable>`
+  ${(props) => props.cssStyles}
+`;
 
-export const JumpingDots = () => (
-  <DotContainer>
+export const JumpingDots: React.FC<Props> = (props) => (
+  <DotContainer {...props}>
     <Dot />
     <Dot />
     <Dot />
