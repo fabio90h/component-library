@@ -32,7 +32,8 @@
         "noUselessIndex": true
       }
     ],
-    "react/button-has-type": ["off"]
+    "react/button-has-type": ["off"],
+    "react/prop-types" : "off"
   },
   "settings": {
     "import/resolver": {
