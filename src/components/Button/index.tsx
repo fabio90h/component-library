@@ -11,8 +11,9 @@ type Props = React.ComponentPropsWithoutRef<'button'> &
   };
 
 const BaseButton = styled.button<CssStyleable>`
-  background-color: #ffffff;
-  border: 1px solid #222222;
+  background-color: ${(props) =>
+    props.theme['button-backgroundColor']};
+  border: ${(props) => props.theme['button-border']};
   border-radius: 8px;
   box-sizing: border-box;
   color: #222222;
@@ -72,6 +73,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
   (props, ref) => {
     const { loading = false, children, ...rest } = props;
     return (
+      // disable button when its loading
       <BaseButton ref={ref} {...rest}>
         {loading && (
           <JumpingDots
