@@ -5,6 +5,7 @@ import { mediaQueryCss } from '../../utils/MediaQuery';
 import { CssStyleable } from '../../utils/StyledComponents';
 import { JumpingDots } from '../Animations/JumpingDots';
 
+
 type Props = React.ComponentPropsWithoutRef<'button'> &
   CssStyleable & {
     loading?: boolean;
@@ -12,11 +13,11 @@ type Props = React.ComponentPropsWithoutRef<'button'> &
 
 const BaseButton = styled.button<CssStyleable>`
   background-color: ${(props) =>
-    props.theme['button-backgroundColor']};
-  border: ${(props) => props.theme['button-border']};
+    props.theme.button.backgroundColor};
+  border: ${(props) => props.theme.button.border};
   border-radius: 8px;
   box-sizing: border-box;
-  color: #222222;
+  color: ${(props) => props.theme.button.color};
   cursor: pointer;
   display: inline-block;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,

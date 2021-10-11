@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { BaseTheme } from '../src/utils/Theme';
+import { LightTheme, DarkTheme } from '../src/utils/Theme';
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={BaseTheme}>{Story()}</ThemeProvider>
+    <ThemeProvider theme={DarkTheme}>{Story()}</ThemeProvider>
   ),
 ];
 

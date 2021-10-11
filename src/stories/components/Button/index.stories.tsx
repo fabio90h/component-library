@@ -8,7 +8,7 @@ export default {
 };
 
 // Normal Button
-export const Base = () => <Button loading>Click Me!</Button>;
+export const Base = () => <Button>Click Me!</Button>;
 
 // Button Load
 export const Loading = () => {
