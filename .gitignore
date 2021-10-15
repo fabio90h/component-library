@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# storybook
+build-storybook.log
+
+# secrets
+secrets.ts
+
 # dependencies
 /node_modules
 /.pnp
