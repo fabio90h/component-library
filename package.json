@@ -55,11 +55,12 @@
   "devDependencies": {
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-links": "^6.3.8",
     "@storybook/node-logger": "^6.3.8",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.8",
-    "@types/styled-components": "^5.1.14",
+    "@types/styled-components": "^5.1.15",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "chromatic": "^5.10.1",

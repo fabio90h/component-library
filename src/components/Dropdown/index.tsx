@@ -21,17 +21,15 @@ const DropdownMenu = styled.div`
   position: absolute;
   left: 0;
   top: calc(100% + 0.25rem);
-  /* background-color: white; */
+  background-color: ${(props) => props.theme.dropdownMenu.backgroundColor};
   padding: 0.75rem;
-  /* border-radius: 0.25rem; */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
-
-  background: rgb(255, 255, 255) !important;
   border-radius: 12px !important;
   box-shadow: rgb(0 0 0 / 12%) 0px 2px 16px !important;
-  color: rgb(34, 34, 34) !important;
+  color: ${props => props.theme.dropdownMenu.color};
   max-height: calc(100vh - 100px) !important;
   overflow-y: auto !important;
   z-index: 2 !important;

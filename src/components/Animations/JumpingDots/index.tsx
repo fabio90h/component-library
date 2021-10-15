@@ -24,7 +24,7 @@ const Dot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 15px;
-  background-color: #4b9cdb;
+  background-color: ${props => props.theme.dot.backgroundColor};
 
   &:nth-last-child(1) {
     margin-left: 4px;

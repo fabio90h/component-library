@@ -5,27 +5,28 @@ import { mediaQueryCss } from '../../utils/MediaQuery';
 import { CssStyleable } from '../../utils/StyledComponents';
 import { JumpingDots } from '../Animations/JumpingDots';
 
+
 type Props = React.ComponentPropsWithoutRef<'button'> &
   CssStyleable & {
     loading?: boolean;
   };
-
+  
 const BaseButton = styled.button<CssStyleable>`
-  background-color: #ffffff;
-  border: 1px solid #222222;
+  background-color: ${(props) =>
+    props.theme.button.backgroundColor};
+  border: ${(props) => props.theme.button.border};
   border-radius: 8px;
   box-sizing: border-box;
-  color: #222222;
+  color: ${(props) => props.theme.button.color};
   cursor: pointer;
   display: inline-block;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
+  font-family: ${(props) => props.theme.button.fontFamily};
+  font-size: ${(props) => props.theme.button.fontSize};
+  font-weight: ${(props) => props.theme.button.fontWeight};
+  line-height: ${(props) => props.theme.button.fontLineHeight};
   margin: 0;
   outline: none;
-  padding: 13px 23px;
+  padding: 14px 24px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -42,13 +43,13 @@ const BaseButton = styled.button<CssStyleable>`
   }
 
   &:active {
-    background-color: #f7f7f7;
-    border-color: #000000;
+    background-color: ${(props) => props.theme.button.activeBackgroundColor};
+    border-color: ${(props) => props.theme.button.activeBorderColor};
     transform: scale(0.96);
   }
   &:disabled {
-    border-color: #dddddd;
-    color: #dddddd;
+    border-color: ${(props) => props.theme.button.disableBorderColor};
+    color: ${(props) => props.theme.button.disabledFontColor};
     cursor: not-allowed;
     opacity: 1;
   }
@@ -72,6 +73,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
   (props, ref) => {
     const { loading = false, children, ...rest } = props;
     return (
+      // disable button when its loading
       <BaseButton ref={ref} {...rest}>
         {loading && (
           <JumpingDots
