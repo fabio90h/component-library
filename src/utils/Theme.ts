@@ -1,62 +1,137 @@
-export type BaseTheme = typeof DarkTheme
+export type BaseTheme = typeof Base
 
 const AirBnbRawTheme = {
-  // Color
-  colorLevel1: '#FAFAFA', // white
-  colorLevel2: '#F5F5F5',
-  colorLevel3: '#EEEEE',
-  colorLevel4: '#E0E0E0',
-  colorLevel5: '#BDBDBD',
-  colorLevel6: '#9E9E9E',
-  colorLevel7: '#757575',
-  colorLevel8: '#616161',
-  colorLevel9: '#424242',
-  colorLevel10: '#212121', // black
-  brandColor: "#FF385C",
-  uiBrandColor: "#222222",
+  /**
+   * COLOR
+   */
+  colorLevel1: '#FFFFFF', // white
+  colorLevel2: '#F7F7F7',
+  colorLevel3: '#EBEBEB',
+  colorLevel4: '#DDDDDD',
+  colorLevel5: '#B0B0B0',
+  colorLevel6: '#767676',
+  colorLevel7: '#717171',
+  colorLevel8: '#484848',
+  colorLevel9: '#222222',
+  colorLevel10:'0000000', // black
 
-  // Font
-  fontFamily: 'Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif'
+  // Used website https://usbrandcolors.com/airbnb-colors/
+  brandColor: "#FF385C",
+  secondColor: "#00A699",
+  thirdColor: "#FC642D",
+
+  /**
+   * BORDER
+   */
+
+  // Radius
+  borderRadiusTiny: "4px",
+  borderRadiusSmall: "8px",
+  borderRadiusBase: "12px",
+  borderRadiusLarge: "16px",
+
+  /**
+   * FONT
+   */
+  fontFamily: 'Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif',
+  
+  // Size
+  fontSizeBase: "16px",
+  fontSizeLarge: "26px",
+
+  fontWeightBase: "600",
+
+  // Line Height
+  fontLineHeightBase: "20px",
+  fontLineHeightLarge: "30px",
+
+  /**
+   * SPACING
+   */
+  spaceTiny: "8px",
+  spaceSmall: "16px",
+  spaceBase: "24px",
+  spaceLarge: "48px",
+  spaceXlarge: "64px",
 }
 
 const Base = {
-  // Button
+  /**
+   * BUTTON
+   */
   button: {
-    border: '1px solid #222222',
-    radius: '8px',
+    border: `1px solid ${AirBnbRawTheme.colorLevel9}`,
+    radius: AirBnbRawTheme.borderRadiusSmall,
+
+    // FONT
     fontFamily: AirBnbRawTheme.fontFamily,
-    backgroundColor: '#ffffff',
+    fontSize: AirBnbRawTheme.fontSizeBase,
+    fontWeight: AirBnbRawTheme.fontWeightBase,
+    fontLineHeight: AirBnbRawTheme.fontLineHeightBase,
+
+    // ACTIVE
+    activeBackgroundColor: AirBnbRawTheme.colorLevel2,
+    activeColor: AirBnbRawTheme.colorLevel1,
+    activeBorderColor: AirBnbRawTheme.colorLevel10,
+    activeBorder: "none",
+
+    // DISABLE
+    disableBorderColor: AirBnbRawTheme.colorLevel4,
+    disabledFontColor: AirBnbRawTheme.colorLevel4,
+
+    backgroundColor: AirBnbRawTheme.colorLevel1,
     color: AirBnbRawTheme.colorLevel10,
-  }
-}
-
-export const LightTheme = {
-  ...Base,
-  button: {
-    ...Base.button
   },
-  // Button
-   // Dropdown Menu
-   dropdownMenu: {
-    backgroundColor: AirBnbRawTheme.colorLevel1
-    
+
+  /**
+   * DROPDOWN
+   */
+  dropdownMenu: {
+    backgroundColor: AirBnbRawTheme.colorLevel1,
+    color: AirBnbRawTheme.colorLevel1,
+  },
+
+  /**
+   * DOT
+   */
+  dot: {
+    backgroundColor: AirBnbRawTheme.colorLevel9
   }
 }
 
-export const DarkTheme = {
+export const LightTheme: BaseTheme = {
+  ...Base
+}
+
+export const DarkTheme: BaseTheme = {
   ...Base,
-  // 
-  // Button
+
+  /**
+   * BUTTON
+   */
   button: {
     ...Base.button,
     backgroundColor: AirBnbRawTheme.brandColor,
-    color: AirBnbRawTheme.colorLevel1
-    
+    color: AirBnbRawTheme.colorLevel1,
+    border: 'none',
+    activeBackgroundColor: 'none',
+    activeBorder: 'none'
   },
-  // Dropdown Menu
+  /**
+   * DROPDOWN
+   */
   dropdownMenu: {
+    ...Base.dropdownMenu,
     backgroundColor: AirBnbRawTheme.colorLevel7,
     color: AirBnbRawTheme.colorLevel1,
+  },
+
+  /**
+   * DOT
+   */
+   dot: {
+    ...Base.dot,
+    backgroundColor: AirBnbRawTheme.colorLevel1
   }
 }
 
