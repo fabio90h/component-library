@@ -16,9 +16,18 @@ const AirBnbRawTheme = {
   colorLevel10:'0000000', // black
 
   // Used website https://usbrandcolors.com/airbnb-colors/
-  brandColor: "#FF385C",
-  secondColor: "#00A699",
-  thirdColor: "#FC642D",
+  // Shades: https://mdigi.tools/color-shades/#00a699
+  brandColor1: '#ff9fb1',
+  brandColor2: '#ff607c',
+  brandColor3: "#FF385C",
+
+  secondColor1: '#00dccb',
+  secondColor2: '#00c5b6',
+  secondColor3: "#00A699",
+
+  thirdColor1: '#fd8054',
+  thirdColor2: '#fc703d',
+  thirdColor3: "#FC642D",
 
   /**
    * BORDER
@@ -88,7 +97,7 @@ const Base = {
    */
   dropdownMenu: {
     backgroundColor: AirBnbRawTheme.colorLevel1,
-    color: AirBnbRawTheme.colorLevel1,
+    color: AirBnbRawTheme.colorLevel9,
   },
 
   /**
@@ -111,10 +120,10 @@ export const DarkTheme: BaseTheme = {
    */
   button: {
     ...Base.button,
-    backgroundColor: AirBnbRawTheme.brandColor,
+    backgroundColor: AirBnbRawTheme.brandColor3,
     color: AirBnbRawTheme.colorLevel1,
     border: 'none',
-    activeBackgroundColor: 'none',
+    activeBackgroundColor: AirBnbRawTheme.brandColor2,
     activeBorder: 'none'
   },
   /**

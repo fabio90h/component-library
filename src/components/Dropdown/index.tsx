@@ -23,8 +23,8 @@ const DropdownMenu = styled.div`
   top: calc(100% + 0.25rem);
   background-color: ${(props) => props.theme.dropdownMenu.backgroundColor};
   padding: 0.75rem;
-  /* border-radius: 0.25rem; */
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
   border-radius: 12px !important;
