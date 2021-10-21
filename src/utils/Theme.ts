@@ -121,7 +121,7 @@ const Base = {
     // FONT
     fontFamily: AirBnbRawTheme.fontFamily,
     fontSize: AirBnbRawTheme.fontSizeBase,
-    fontWeight: AirBnbRawTheme.fontWeightBase,
+    fontWeight: AirBnbRawTheme.fontWeightHeavy,
     fontLineHeight: AirBnbRawTheme.fontLineHeightBase,
 
     // ACTIVE
