@@ -79,6 +79,20 @@ const Base = {
   fontFamily: AirBnbRawTheme.fontFamily,
   color: AirBnbRawTheme.colorLevel9,
 
+  logo: {
+    fill: AirBnbRawTheme.brandColor3,
+  },
+
+  /**
+   * A
+   */
+  a: {
+    fontSize: AirBnbRawTheme.fontSizeSmall,
+    fontWeight: AirBnbRawTheme.fontWeightBase,
+    color: AirBnbRawTheme.colorLevel10,
+    hoverColor: AirBnbRawTheme.colorLevel7,
+  },
+
   /**
    * H1
    */
@@ -162,6 +176,15 @@ export const DarkTheme: BaseTheme = {
   ...Base,
 
   color: AirBnbRawTheme.colorLevel1,
+
+  /**
+   * A
+   */
+  a: {
+    ...Base.a,
+    color: AirBnbRawTheme.colorLevel1,
+    hoverColor: AirBnbRawTheme.colorLevel3,
+  },
 
   /**
    * BUTTON
