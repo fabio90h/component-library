@@ -9,6 +9,10 @@ export default {
   component: Navbar,
 };
 
+const MenuA = styled(A)`
+  font-size: 14px;
+`;
+
 const MenuContainer = styled.div`
   padding: 5px 0;
   & a {
@@ -23,10 +27,10 @@ export const Base = () => (
     logo={<AirbnbLogo />}
     menu={
       <MenuContainer>
-        <A>Become a host</A>
-        <A>Help</A>
-        <A>Sign up</A>
-        <A>Menu</A>
+        <MenuA>Become a host</MenuA>
+        <MenuA>Help</MenuA>
+        <MenuA>Sign up</MenuA>
+        <MenuA>Menu</MenuA>
       </MenuContainer>
     }
   />

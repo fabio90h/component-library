@@ -6,8 +6,7 @@ type Props = {
   menu: React.ReactNode;
 };
 
-const NavContainer = styled.div`
-  border: 1px solid red;
+const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
