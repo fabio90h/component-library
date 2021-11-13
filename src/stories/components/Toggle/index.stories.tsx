@@ -12,7 +12,12 @@ export const Base = () => {
 
   return (
     <div>
-      <Toggle onClick={() => setIsOn(!isOn)} checked={isOn} />
+      <Toggle
+        handleOnChange={() => {
+          setIsOn(!isOn);
+        }}
+        checked={isOn}
+      />
       {isOn ? 'on' : 'off'}
     </div>
   );

@@ -58,13 +58,14 @@ const Switch = styled.input.attrs({ type: 'checkbox' })`
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   checked: boolean;
+  handleOnChange: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const Toggle: React.FC<Props> = (props) => {
-  const { checked } = props;
+  const { checked, handleOnChange } = props;
   return (
     <ToggleContainer>
-      <Switch checked={checked} />
+      <Switch checked={checked} onChange={handleOnChange} />
       <Slider />
     </ToggleContainer>
   );
