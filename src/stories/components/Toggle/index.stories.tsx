@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from 'styled-components';
 import Toggle from '../../../components/Toggle';
 
 export default {
@@ -17,6 +18,11 @@ export const Base = () => {
           setIsOn(!isOn);
         }}
         checked={isOn}
+        cssStyles={css`
+          & > span {
+            background-color: red;
+          }
+        `}
       />
       {isOn ? 'on' : 'off'}
     </div>

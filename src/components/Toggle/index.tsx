@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { CssStyleable } from '../../utils/StyledComponents';
+
 /**
  * Outter box of the toggle
  * Note: Label was picked here because we want
  * the checkbox to be selected even when we click outside of it
  */
-const ToggleContainer = styled.label`
+const ToggleContainer = styled.label<CssStyleable>`
   position: relative;
   display: inline-block;
   width: 60px;
@@ -23,7 +25,7 @@ const Slider = styled.span`
   top: 0;
   bottom: 0;
 
-  background-color: #ccc;
+  background-color: ${(props) => props.theme.toggle.disableSlider};
   transition: 0.4s;
 
   &:before {
@@ -35,7 +37,7 @@ const Slider = styled.span`
     bottom: 1px;
     top: 1px;
     left: 1px;
-    background-color: white;
+    background-color: ${(props) => props.theme.toggle.switch};
     transition: 0.4s;
   }
 `;
@@ -47,19 +49,19 @@ const Switch = styled.input.attrs({ type: 'checkbox' })`
 
   &:checked + span:before {
     transform: translateX(28px);
-    background-color: white;
   }
 
   &:checked + ${Slider} {
-    background-color: #6ff363;
+    background-color: ${(props) => props.theme.toggle.activeSlider};
     transition: 0.4s;
   }
 `;
 
-type Props = React.HTMLAttributes<HTMLDivElement> & {
-  checked: boolean;
-  handleOnChange: React.ChangeEventHandler<HTMLInputElement>;
-};
+type Props = React.HTMLAttributes<HTMLDivElement> &
+  CssStyleable & {
+    checked: boolean;
+    handleOnChange: React.ChangeEventHandler<HTMLInputElement>;
+  };
 
 const Toggle: React.FC<Props> = (props) => {
   const { checked, handleOnChange } = props;
