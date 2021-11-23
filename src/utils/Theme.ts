@@ -17,11 +17,11 @@ const AirBnbRawTheme = {
 
   // Used website https://usbrandcolors.com/airbnb-colors/
   // Shades: https://mdigi.tools/color-shades/#00a699
-  brandColor1: '#ff9fb1',
+  brandColor1: '#ff9fb1', // pink
   brandColor2: '#ff607c',
   brandColor3: '#FF385C',
 
-  secondColor1: '#00dccb',
+  secondColor1: '#00dccb', // green blue mix
   secondColor2: '#00c5b6',
   secondColor3: '#00A699',
 
@@ -78,6 +78,29 @@ const Base = {
    */
   fontFamily: AirBnbRawTheme.fontFamily,
   color: AirBnbRawTheme.colorLevel9,
+
+  logo: {
+    fill: AirBnbRawTheme.brandColor3,
+  },
+
+  /**
+   * TOGGLE
+   */
+  toggle: {
+    activeSlider: AirBnbRawTheme.brandColor2,
+    disableSlider: AirBnbRawTheme.colorLevel4,
+    switch: AirBnbRawTheme.colorLevel1,
+  },
+
+  /**
+   * A
+   */
+  a: {
+    fontSize: AirBnbRawTheme.fontSizeSmall,
+    fontWeight: AirBnbRawTheme.fontWeightBase,
+    color: AirBnbRawTheme.colorLevel10,
+    hoverColor: AirBnbRawTheme.colorLevel7,
+  },
 
   /**
    * H1
@@ -142,8 +165,19 @@ const Base = {
    * DROPDOWN
    */
   dropdownMenu: {
+    iconHoverColor: AirBnbRawTheme.brandColor2,
     backgroundColor: AirBnbRawTheme.colorLevel1,
     color: AirBnbRawTheme.colorLevel9,
+    hover: AirBnbRawTheme.brandColor2,
+  },
+
+  /**
+   * NAVBAR
+   */
+  navbar: {
+    background: AirBnbRawTheme.colorLevel2,
+    itemColor: AirBnbRawTheme.colorLevel7,
+    hoverItem: AirBnbRawTheme.brandColor2,
   },
 
   /**
@@ -162,6 +196,15 @@ export const DarkTheme: BaseTheme = {
   ...Base,
 
   color: AirBnbRawTheme.colorLevel1,
+
+  /**
+   * A
+   */
+  a: {
+    ...Base.a,
+    color: AirBnbRawTheme.colorLevel1,
+    hoverColor: AirBnbRawTheme.colorLevel3,
+  },
 
   /**
    * BUTTON
@@ -184,10 +227,29 @@ export const DarkTheme: BaseTheme = {
   },
 
   /**
+   * TOGGLE
+   */
+  toggle: {
+    ...Base.toggle,
+    activeSlider: AirBnbRawTheme.brandColor3,
+    disableSlider: AirBnbRawTheme.colorLevel7,
+    switch: AirBnbRawTheme.colorLevel4,
+  },
+
+  /**
    * DOT
    */
   dot: {
     ...Base.dot,
     backgroundColor: AirBnbRawTheme.colorLevel1,
+  },
+
+  /**
+   * NAVBAR
+   */
+  navbar: {
+    ...Base.navbar,
+    background: AirBnbRawTheme.colorLevel4,
+    itemColor: AirBnbRawTheme.colorLevel8,
   },
 };

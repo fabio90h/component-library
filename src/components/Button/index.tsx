@@ -5,15 +5,13 @@ import { mediaQueryCss } from '../../utils/MediaQuery';
 import { CssStyleable } from '../../utils/StyledComponents';
 import { JumpingDots } from '../Animations/JumpingDots';
 
-
 type Props = React.ComponentPropsWithoutRef<'button'> &
   CssStyleable & {
     loading?: boolean;
   };
-  
+
 const BaseButton = styled.button<CssStyleable>`
-  background-color: ${(props) =>
-    props.theme.button.backgroundColor};
+  background-color: ${(props) => props.theme.button.backgroundColor};
   border: ${(props) => props.theme.button.border};
   border-radius: 8px;
   box-sizing: border-box;
@@ -43,7 +41,8 @@ const BaseButton = styled.button<CssStyleable>`
   }
 
   &:active {
-    background-color: ${(props) => props.theme.button.activeBackgroundColor};
+    background-color: ${(props) =>
+      props.theme.button.activeBackgroundColor};
     border-color: ${(props) => props.theme.button.activeBorderColor};
     transform: scale(0.96);
   }

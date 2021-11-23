@@ -1,4 +1,5 @@
 import React from 'react';
+import { menu } from 'react-icons-kit/iconic/menu';
 import Dropdown from '../../../components/Dropdown';
 
 export default {
@@ -10,16 +11,10 @@ const MOCK_LINKS = ['Free Tutorial', 'Courses', 'Blog', 'Other'];
 
 // Normal Button
 export const Base = () => (
-  <Dropdown
-    buttonLabel={
-      <div>
-        <b>Tester React Nodes</b>
-      </div>
-    }
-  >
+  <Dropdown openDirection="right" icon={menu} size={25}>
     {MOCK_LINKS.map((link) => (
       <div key={link} style={{ padding: '5px' }}>
-        <b>{link}</b>
+        <span>{link}</span>
       </div>
     ))}
   </Dropdown>
