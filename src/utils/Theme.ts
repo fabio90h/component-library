@@ -165,8 +165,10 @@ const Base = {
    * DROPDOWN
    */
   dropdownMenu: {
+    iconHoverColor: AirBnbRawTheme.brandColor2,
     backgroundColor: AirBnbRawTheme.colorLevel1,
     color: AirBnbRawTheme.colorLevel9,
+    hover: AirBnbRawTheme.brandColor2,
   },
 
   /**

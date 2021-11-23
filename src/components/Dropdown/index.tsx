@@ -3,31 +3,30 @@ import styled from 'styled-components';
 import Icon, { IconProp } from 'react-icons-kit';
 import { useComponentVisible } from '../../hooks/useComponentVisible';
 
-type Props = IconProp & {};
+type Props = IconProp & {
+  openDirection?: 'left' | 'right';
+};
 
 const IconContainer = styled.span`
-  /* border: 1px solid red; */
+  cursor: pointer;
+  &:hover {
+    color: ${(props) => props.theme.dropdownMenu.iconHoverColor};
+  }
 `;
 
 const DropdownContainer = styled.span`
   position: relative;
-
-  &:hover {
-    background-color: 'red';
-  }
-
-  /* Target the DropdownMenu when button is focused */
-  /* & > button:focus + #dropdownMenu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  } */
 `;
 
-const DropdownMenu = styled.div<{ isOpen: boolean }>`
+const DropdownMenu = styled.div<{
+  isOpen: boolean;
+  openDirection: 'left' | 'right';
+}>`
   position: absolute;
-  left: 0;
+  left: ${({ openDirection }) =>
+    openDirection === 'left' ? '-200px' : '0'};
   top: calc(100% + 0.85rem);
+
   background-color: ${(props) =>
     props.theme.dropdownMenu.backgroundColor};
   padding: 0.75rem;
@@ -41,8 +40,14 @@ const DropdownMenu = styled.div<{ isOpen: boolean }>`
   max-height: calc(100vh - 100px) !important;
   overflow-y: auto !important;
   z-index: 2 !important;
-  min-width: 240px !important;
+  min-width: 200px !important;
+  max-width: 240px !important;
   display: block !important;
+
+  & > div:hover {
+    color: ${(props) => props.theme.dropdownMenu.hover};
+    cursor: pointer;
+  }
 
   /* Animations */
   transform: ${(props) =>
@@ -50,11 +55,14 @@ const DropdownMenu = styled.div<{ isOpen: boolean }>`
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 `;
 
-const Dropdown: React.FC<Props> = ({ children, icon, size }) => {
-  // const [isOpen, setIsOpen] = React.useState(false);
-
+const Dropdown: React.FC<Props> = ({
+  children,
+  icon,
+  size,
+  openDirection = 'left',
+}) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
-    useComponentVisible(true);
+    useComponentVisible(false);
 
   return (
     <DropdownContainer
@@ -64,7 +72,11 @@ const Dropdown: React.FC<Props> = ({ children, icon, size }) => {
       <IconContainer>
         <Icon icon={icon} size={size} />
       </IconContainer>
-      <DropdownMenu isOpen={isComponentVisible} id="dropdownMenu">
+      <DropdownMenu
+        isOpen={isComponentVisible}
+        openDirection={openDirection}
+        id="dropdownMenu"
+      >
         {children}
       </DropdownMenu>
     </DropdownContainer>
