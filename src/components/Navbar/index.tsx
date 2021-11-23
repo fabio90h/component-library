@@ -8,9 +8,11 @@ type Props = {
 
 const NavContainer = styled.nav`
   display: flex;
+  padding: 0 10px;
   justify-content: space-between;
   align-items: center;
   height: 64px;
+  background-color: ${(props) => props.theme.navbar.background};
 `;
 
 const Navbar: React.FC<Props> = (props) => {

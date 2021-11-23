@@ -10,6 +10,7 @@ const A = styled.a<CssStyleable>`
   &:hover {
     color: ${(props) => props.theme.a.hoverColor};
   }
+  ${(props) => props.cssStyles}
 `;
 
 export default A;
