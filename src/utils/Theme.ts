@@ -186,6 +186,14 @@ const Base = {
   dot: {
     backgroundColor: AirBnbRawTheme.colorLevel9,
   },
+
+  /**
+   * MODAL
+   */
+  modal: {
+    backgroundColor: AirBnbRawTheme.colorLevel1,
+    color: AirBnbRawTheme.colorLevel10,
+  },
 };
 
 export const LightTheme: BaseTheme = {
@@ -251,5 +259,14 @@ export const DarkTheme: BaseTheme = {
     ...Base.navbar,
     background: AirBnbRawTheme.colorLevel4,
     itemColor: AirBnbRawTheme.colorLevel8,
+  },
+
+  /**
+   * MODAL
+   */
+  modal: {
+    ...Base.modal,
+    backgroundColor: AirBnbRawTheme.colorLevel6,
+    color: AirBnbRawTheme.colorLevel1,
   },
 };
